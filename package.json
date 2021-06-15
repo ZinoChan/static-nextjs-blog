@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/josefin-sans": "^4.4.5",
+    "@fontsource/montserrat": "^4.4.5",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
