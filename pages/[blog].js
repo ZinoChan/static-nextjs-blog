@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import Footer from "../components/Footer";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -33,7 +33,7 @@ const BlogDetails = () => {
              animate={{y: 0, opacity: 1}}
              transition={{duration: .6, delay: 1, ease: 'easeInOut'}}
             >
-            <Image src="/blog2.jpg" width={900} height={500} />
+            <img src="/blog2.jpg" className=" max-w-full mx-auto" width={900} height={500} />
             </motion.div>
           </div>
           <p className=" text-gray-400 font-secondary">10min read</p>

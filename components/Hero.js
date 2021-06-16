@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
+
 
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
       className="max-w-screen-xl px-2 mx-auto h-screen bg-cover bg-center xl:grid xl:grid-cols-2 flex items-center"
     >
       <div className="z-20 absolute h-screen top-0 left-0 w-full">
-        <Image  src="/road.jpg" layout="fill" />
+        <img  src="/road.jpg" className="w-full h-full" alt="road"/>
       </div>
       <div className="relative z-30 w-full">
         <motion.h1
