@@ -2,23 +2,39 @@ import React from "react";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 
 
 const BlogDetails = () => {
   return (
     <>
-    <h1 className="text-2xl font-bold font-main underline p-4">
+    <motion.h1
+      initial={{x: -100, opacity: 0}}
+      animate={{x: 0, opacity: 1}}
+      transition={{duration: .6, ease: 'easeInOut'}}
+    className="text-2xl font-bold font-main underline p-4">
       <Link href="/">
         <a>Back to Posts</a>
       </Link>
-    </h1>
+    </motion.h1>
       <section className="h-full max-w-screen-xl px-2 py-20 ">
         <div className="max-w-screen-lg mx-auto">
           <div className="text-center my-10">
-            <h2 className="font-main font-bold text-2xl mb-6 capitalize">
+            <motion.h2
+              initial={{y: -100, opacity: 0}}
+              animate={{y: 0, opacity: 1}}
+              transition={{duration: .6, delay: .6, ease: 'easeInOut'}}
+            className="font-main font-bold text-2xl mb-6 capitalize">
               Lorem ipsum dolar
-            </h2>
+            </motion.h2>
+            <motion.div
+             initial={{y: 100, opacity: 0}}
+             animate={{y: 0, opacity: 1}}
+             transition={{duration: .6, delay: 1, ease: 'easeInOut'}}
+            >
             <Image src="/blog2.jpg" width={900} height={500} />
+            </motion.div>
           </div>
           <p className=" text-gray-400 font-secondary">10min read</p>
           <p className="mt-16 text-md font-secondary text-gray-500 leading-relaxed">

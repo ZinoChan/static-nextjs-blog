@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
+
 
 const Hero = () => {
   return (
@@ -10,17 +12,29 @@ const Hero = () => {
         <Image  src="/road.jpg" layout="fill" />
       </div>
       <div className="relative z-30 w-full">
-        <h1 className="xl:text-4xl lg:text-7xl md:text-5xl text-4xl capitalize font-main mb-4 font-bold">
+        <motion.h1
+        initial={{y: -100, opacity: 0}}
+        animate={{y: 0, opacity: 1}}
+        transition={{duration: .6, ease: 'easeInOut'}}
+        className="xl:text-4xl lg:text-7xl md:text-5xl text-4xl capitalize font-main mb-4 font-bold">
           The Road Less Traveled
-        </h1>
-        <p className=" text-md font-secondary mb-6 text-gray-500">
+        </motion.h1>
+        <motion.p 
+        initial={{y: 100, opacity: 0}}
+        animate={{y: 0, opacity: 1}}
+        transition={{duration: .6, delay: .6, ease: 'easeInOut'}}
+        className=" text-md font-secondary mb-6 text-gray-500">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
           Ut congue pellentesque amet, mi, aenean suspendisse. <br /> Amet, in
           est dictum tellus cursus.
-        </p>
-        <button className="px-4 py-2 bg-black text-white font-main capitalize text-md">
+        </motion.p>
+        <motion.button
+        initial={{y: 100, opacity: 0}}
+        animate={{y: 0, opacity: 1}}
+        transition={{duration: .6, delay: 1.2, ease: 'easeInOut'}}
+        className="px-4 py-2 bg-black text-white font-main capitalize text-md">
           Read now
-        </button>
+        </motion.button>
       </div>
     </section>
   );

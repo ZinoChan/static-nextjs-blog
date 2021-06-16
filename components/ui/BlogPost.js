@@ -1,11 +1,38 @@
+import {  motion, useAnimation } from 'framer-motion';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+
 
 
 const BlogPost = () => {
+
+  const [ref, inView] = useInView({
+    threshold: 0.2
+  });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if(inView){
+      animation.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: .6, ease: 'easeInOut'
+        }
+      });
+    }
+  },[inView])
+
   return (
-    <div className="rounded border border-gray-200">
+    <motion.div
+    ref={ref}
+    initial={{y: 100, opacity: 0}}
+    animate={animation}
+    className="rounded border border-gray-200">
       <Link href="/blog">
-        <a>
+        <a
+        >
           <img src="/blog1.jpg" alt="blog" />
           <div className="px-2 py-4">
             <p className="my-2 text-md font-secondary text-gray-300">10min read</p>
@@ -18,7 +45,7 @@ const BlogPost = () => {
           </div>
         </a>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

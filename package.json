@@ -10,9 +10,11 @@
   "dependencies": {
     "@fontsource/josefin-sans": "^4.4.5",
     "@fontsource/montserrat": "^4.4.5",
+    "framer-motion": "^4.1.17",
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-intersection-observer": "^8.32.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.4",
