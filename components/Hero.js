@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import Img from 'react-optimized-image';
 
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
       className="max-w-screen-xl px-2 mx-auto h-screen bg-cover bg-center xl:grid xl:grid-cols-2 flex items-center"
     >
       <div className="z-20 absolute h-screen top-0 left-0 w-full">
-        <img  src="/road.jpg" className="w-full h-full" alt="road"/>
+        <Img   src={require('../img/road.jpg')} webp sizes={[400, 800]} className="max-w-full max-h-full w-full h-full" />
       </div>
       <div className="relative z-30 w-full">
         <motion.h1
@@ -19,7 +19,7 @@ const Hero = () => {
         className="xl:text-4xl lg:text-7xl md:text-5xl text-4xl capitalize font-main mb-4 font-bold">
           The Road Less Traveled
         </motion.h1>
-        <motion.p 
+        <motion.p
         initial={{y: 100, opacity: 0}}
         animate={{y: 0, opacity: 1}}
         transition={{duration: .6, delay: .6, ease: 'easeInOut'}}

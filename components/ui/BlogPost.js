@@ -2,7 +2,8 @@ import {  motion, useAnimation } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-
+import blog1 from '../../img/blog1.jpg'
+import Img from 'react-optimized-image'
 
 
 const BlogPost = () => {
@@ -30,10 +31,9 @@ const BlogPost = () => {
     initial={{y: 100, opacity: 0}}
     animate={animation}
     className="rounded border border-gray-200">
-      <Link href="/blog">
-        <a
-        >
-          <img src="/blog1.jpg" alt="blog" />
+      <Link href="/blog" as={ process.env.BACKEND_URL + '/blog'}>
+        <a>
+        <Img   src={blog1} webp   />
           <div className="px-2 py-4">
             <p className="my-2 text-md font-secondary text-gray-300">10min read</p>
             <h3 className="text-xl font-main mb-4 capitalize">Lorem ipsum dolar</h3>

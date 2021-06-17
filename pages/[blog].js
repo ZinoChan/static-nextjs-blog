@@ -3,7 +3,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import  Img  from "react-optimized-image";
 
 
 const BlogDetails = () => {
@@ -14,7 +14,7 @@ const BlogDetails = () => {
       animate={{x: 0, opacity: 1}}
       transition={{duration: .6, ease: 'easeInOut'}}
     className="text-2xl font-bold font-main underline p-4">
-      <Link href="/">
+      <Link href="/" as={ process.env.BACKEND_URL + '/'}>
         <a>Back to Posts</a>
       </Link>
     </motion.h1>
@@ -33,7 +33,7 @@ const BlogDetails = () => {
              animate={{y: 0, opacity: 1}}
              transition={{duration: .6, delay: 1, ease: 'easeInOut'}}
             >
-            <img src="/blog2.jpg" className=" max-w-full mx-auto" width={900} height={500} />
+            <Img src={require('../img/blog2.jpg')} className=" max-w-full mx-auto"  />
             </motion.div>
           </div>
           <p className=" text-gray-400 font-secondary">10min read</p>
